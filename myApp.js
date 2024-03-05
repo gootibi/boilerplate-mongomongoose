@@ -1,5 +1,13 @@
 require('dotenv').config();
+const mongoose = require('mongoose');
 
+const myID = 'mongodb+srv://testUser:CtielqYw8PwbPY9H@cluster0.j1sm9nu.mongodb.net/'
+// const myID = 'mongodb+srv://testUser:CtielqYw8PwbPY9H@cluster0.j1sm9nu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+
+mongoose.connect(myID, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then((data) => {
+    console.log('connection', data.id);
+  })
 
 let Person;
 
